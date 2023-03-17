@@ -1,5 +1,9 @@
 const serviceData = async (data)=>{
-    // console.log(data.InvestmentPeriod,"InvestmentPeriod");
+    console.log(data.InvestmentPeriod,"InvestmentPeriod");
+    console.log(data.CummulationAmount,"monthly investment");
+    console.log(data.RateOfReturn,"rate of returne");
+    console.log(data.YearlyIncrement,"yearlyincrement");
+
     const graph = [
         {
          years: 0,

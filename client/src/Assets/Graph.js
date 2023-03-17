@@ -2,9 +2,11 @@ import React from "react";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 
+
 function toIndianRupees(sum){
   return sum.toString().replace(/\D/g, "").replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,");
 }
+
 
 function Graph({MonthlyInvestment, InvestmentPeriod, RateOfReturn, YearlyIncrement}){
     const graph = [
@@ -24,7 +26,7 @@ function Graph({MonthlyInvestment, InvestmentPeriod, RateOfReturn, YearlyIncreme
     incrementedAmount=Math.floor(MonthlyInvestment*(YearlyIncrement/100));
     MonthlyInvestment=MonthlyInvestment + incrementedAmount
     }
-    
+
     MonthlyInvest += MonthlyInvestment;
     CummulationAmount =MonthlyInvestment*(Math.pow((1+RateOfReturn),(PeriodInMonth-i+1)));  
     TotalSIPWithStepUp += CummulationAmount;       

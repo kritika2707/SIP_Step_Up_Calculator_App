@@ -68,7 +68,13 @@ function Calculator() {
             YearlyIncrement={YearlyIncrement}
             changeYearlyIncrement={changeYearlyIncrement}
           />
-        <Graph data={result}/>
+        {/* <Graph data={result}/> */}
+        <Graph 
+        MonthlyInvestment ={  MonthlyInvestment}
+                    InvestmentPeriod= {InvestmentPeriod}
+                    RateOfReturn= {RateOfReturn}
+                    YearlyIncrement={ YearlyIncrement}
+        />
         </div>
       </div>
     </>
