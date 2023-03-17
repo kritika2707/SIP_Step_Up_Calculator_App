@@ -2,9 +2,9 @@ import React from "react";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 
-// function toIndianRupees(sum){
-  // return sum.toString().replace(/\D/g, "").replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,");
-// }
+function toIndianRupees(sum){
+  return sum.toString().replace(/\D/g, "").replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,");
+}
 
 
 function Graph({MonthlyInvestment, InvestmentPeriod, RateOfReturn, YearlyIncrement}){

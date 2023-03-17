@@ -29,7 +29,12 @@ const serviceData = async (data)=>{
         graph.push(obj)
         }      
       }
-      return graph;
+      result={
+        graph:graph,
+        
+
+      }
+      return ;
 }
 
 module.exports = serviceData;
