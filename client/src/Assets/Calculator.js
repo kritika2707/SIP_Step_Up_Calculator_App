@@ -21,7 +21,10 @@ function Calculator() {
     setYearlyIncrement(val);
   }
   
-  
+  const [TotalSIPWithStepUp, setTotalSIPWithStepUp] = useState();
+  const [graph,setGraph]=useState();
+  const [MonthlyInvest, setMonthlyInvest]= useState();
+
   const [result, setResult] = useState();
   // const [status, setStatus] = useState(-1);
   
@@ -36,13 +39,18 @@ function Calculator() {
                     } 
                    
          }
-        ).then((res)=>{
-        setResult(res.data);
-      });
+        ).then((res) =>{
+          setResult(res.data)
+          setTotalSIPWithStepUp(res.data.fresult.TotalSIPWithStepUp);
+          setGraph(res.data.fresult.graph);
+          setMonthlyInvest(res.data.fresult.MonthlyInvest)
+        }
+        
+      );
 
-  },[]) 
+  },[MonthlyInvestment,InvestmentPeriod,RateOfReturn,YearlyIncrement]) 
      
-  // console.log("Result:",result);
+  console.log("Result:",result);
   // console.log("Status:",status)
      
      
@@ -68,7 +76,7 @@ function Calculator() {
             YearlyIncrement={YearlyIncrement}
             changeYearlyIncrement={changeYearlyIncrement}
           />
-        <Graph MonthlyInvestment={MonthlyInvestment} InvestmentPeriod={InvestmentPeriod} RateOfReturn={RateOfReturn} YearlyIncrement={YearlyIncrement}/>
+        <Graph graph={graph} MonthlyInvest={MonthlyInvest} InvestmentPeriod={InvestmentPeriod} TotalSIPWithStepUp={TotalSIPWithStepUp} />
         </div>
       </div>
     </>

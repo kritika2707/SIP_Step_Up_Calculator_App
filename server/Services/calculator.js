@@ -1,5 +1,5 @@
 const serviceData = async (data)=>{
-    // console.log(data.InvestmentPeriod,"InvestmentPeriod");
+  console.log(data);
     const graph = [
         {
          years: 0,
@@ -23,18 +23,20 @@ const serviceData = async (data)=>{
       if(i%12==0){
         const obj = {
          years: i/12,
-         sipStepUp: Math.round(TotalSIPWithStepUp),
-         investment: Math.round(MonthlyInvest)
+         sipStepUp: Number(Math.round(TotalSIPWithStepUp).toFixed(0)),
+         investment: Number(Math.round(MonthlyInvest).toFixed(0))
         }
         graph.push(obj)
         }      
       }
-      result={
-        graph:graph,
-        
-
+      TotalSIPWithStepUp = Number(TotalSIPWithStepUp.toFixed(0));
+      graphResult={
+        graph,
+        TotalSIPWithStepUp,
+        MonthlyInvest
       }
-      return ;
+      console.log(graphResult);
+      return graphResult;
 }
 
 module.exports = serviceData;
