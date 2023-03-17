@@ -196,26 +196,35 @@ import { useState } from "react";
   `;
 
   
-function SliderCalculator({index, minimum, maximum,steps,value, setValue}){
+  function SliderCalculator({index, minimum, maximum,steps,value, setValue}){
 
   
-  const [inputValue, setInputValue] = useState(minimum);
-    const handleSliderChange = (event, newValue) => {
-        setValue(newValue);
-        setInputValue(newValue)
-    };
-
-    const handleInputChange = (event) => {
-      let val = event.target.value;
-      if(val < minimum){
-        alert("please enter valid num");
-      }
-        setValue(event.target.value === '' ? '' : Number(event.target.value));
-        setInputValue(val);
-        setValue(minimum);
-    };
-    return (
-
+    const [inputValue, setInputValue] = useState(minimum);
+  
+    
+      const handleSliderChange = (event, newValue) => {
+          setValue(newValue);
+          setInputValue(newValue)
+      };
+  
+      const handleInputChange = (event) => {
+        let val = event.target.value;
+        if(val < 0 || val === '' || val ==='-'){
+          alert("Please Enter valid value .");
+          setValue(minimum)
+          return false;
+        }
+        else if(val > maximum){
+          alert("Enter small value")
+          setValue(maximum)
+          return;
+  
+        }
+          setValue(event.target.value === '' ? '' : Number(event.target.value));
+          setInputValue(event.target.value);
+          // setValue(minimum);
+      };
+      return (
 
       <div className='slider-area'>
           <Box sx={{ width: 510 }}>

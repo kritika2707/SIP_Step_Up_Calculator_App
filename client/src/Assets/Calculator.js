@@ -42,7 +42,7 @@ function Calculator() {
 
   },[]) 
      
-  // console.log("Result:",result);
+  console.log("Result:",result);
   // console.log("Status:",status)
      
      
