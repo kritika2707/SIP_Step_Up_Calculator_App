@@ -166,7 +166,7 @@ svg {
 
 .textforgraph h2 {
   color: #2c74b3;
-  margin-left: -10px;
+  margin-left: 10px;
   font-weight: bold;
   margin-top: -15px;
 }
@@ -180,11 +180,11 @@ svg {
 
 .textforgraph p .currencyRupeeInPara {
   color: #ff6e31;
-  margin-left: -15px;
+  margin-left: 10px;
 }
 
 .textforgraph p .currencyRupeeInPara2 {
   color: #03c988;
-  margin-left: -15px;
+  margin-left: 10px;
   font-weight: bold;
 }

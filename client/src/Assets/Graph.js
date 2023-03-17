@@ -1,5 +1,4 @@
 import React from "react";
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 
 
@@ -19,19 +18,16 @@ function Graph({TotalSIPWithStepUp, InvestmentPeriod, graph, MonthlyInvest}){
       you will have
     </span>
     <h2 >
-      <CurrencyRupeeIcon />
-      {toIndianRupees(Number(TotalSIPWithStepUp))}
+      ₹ {toIndianRupees(Number(TotalSIPWithStepUp))}
     </h2>
     <p >
       That's
       <span className="currencyRupeeInPara">
-        <CurrencyRupeeIcon />
-        {toIndianRupees(Number(TotalSIPWithStepUp - MonthlyInvest))}
+        ₹ {toIndianRupees(Number(TotalSIPWithStepUp - MonthlyInvest))}
       </span>{" "}
       as potential capital gains on your investment of
       <span className="currencyRupeeInPara2">
-        <CurrencyRupeeIcon />
-        {toIndianRupees(Number(MonthlyInvest))}
+        ₹ {toIndianRupees(Number(MonthlyInvest))}
       </span>
     </p>
     </div>
@@ -46,8 +42,8 @@ function Graph({TotalSIPWithStepUp, InvestmentPeriod, graph, MonthlyInvest}){
           <XAxis dataKey="years"/>
           <YAxis dataKey="sipStepUp" width={90}/>
           <Tooltip />
-          <Line type="monotone" dataKey="investment" stroke="green" dot={false} strokeWidth ={2}/>
-          <Line type="monotone" dataKey="sipStepUp" stroke="red" dot={false} strokeWidth ={2}/>
+          <Line type="monotone" dataKey="investment" stroke="#2f50e8" dot={false} strokeWidth ={2}/>
+          <Line type="monotone" dataKey="sipStepUp" stroke="#4822a2" dot={false} strokeWidth ={2}/>
         </LineChart>
       </ResponsiveContainer>
 
