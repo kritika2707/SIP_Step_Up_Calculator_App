@@ -50,7 +50,7 @@ function Calculator() {
 
   },[MonthlyInvestment,InvestmentPeriod,RateOfReturn,YearlyIncrement]) 
      
-  console.log("Result:",result);
+  // console.log("Result:",result);
   // console.log("Status:",status)
      
      
