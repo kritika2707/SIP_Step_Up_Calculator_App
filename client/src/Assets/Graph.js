@@ -20,18 +20,18 @@ function Graph({TotalSIPWithStepUp, InvestmentPeriod, graph, MonthlyInvest}){
     </span>
     <h2 >
       <CurrencyRupeeIcon />
-      {TotalSIPWithStepUp}
+      {toIndianRupees(Number(TotalSIPWithStepUp))}
     </h2>
     <p >
       That's
       <span className="currencyRupeeInPara">
         <CurrencyRupeeIcon />
-        {(TotalSIPWithStepUp - MonthlyInvest)}
+        {toIndianRupees(Number(TotalSIPWithStepUp - MonthlyInvest))}
       </span>{" "}
       as potential capital gains on your investment of
       <span className="currencyRupeeInPara2">
         <CurrencyRupeeIcon />
-        {MonthlyInvest}
+        {toIndianRupees(Number(MonthlyInvest))}
       </span>
     </p>
     </div>

@@ -1,4 +1,6 @@
 const serviceData = async ({MonthlyInvestment,InvestmentPeriod,RateOfReturn,YearlyIncrement})=>{ 
+  try {
+    
   let monthlyInvestment = Number(MonthlyInvestment);
   let investmentPeriod = Number(InvestmentPeriod);
   let rateOfReturn = Number(RateOfReturn);
@@ -41,6 +43,11 @@ const serviceData = async ({MonthlyInvestment,InvestmentPeriod,RateOfReturn,Year
         MonthlyInvest:MonthlyInvest.toFixed(0)
       }
       return graphResult;
+      
+  } catch (error) {
+    res.send(error);
+    
+  }
 }
 
 module.exports = serviceData;
