@@ -1,11 +1,11 @@
-const serviceData = async ({MonthlyInvestment,InvestmentPeriod,RateOfReturn,YearlyIncrement})=>{
-  console.log("InvestmentPEriod:",InvestmentPeriod);  
-  console.log("Monthly Investment:",MonthlyInvestment);  
-  console.log("RateofReturn:",RateOfReturn);  
-  console.log("Yearly Increment:",YearlyIncrement);  
-
-      let PeriodInMonth = InvestmentPeriod*12;
-      RateOfReturn = (RateOfReturn)/1200;
+const serviceData = async ({MonthlyInvestment,InvestmentPeriod,RateOfReturn,YearlyIncrement})=>{ 
+  let monthlyInvestment = Number(MonthlyInvestment);
+  let investmentPeriod = Number(InvestmentPeriod);
+  let rateOfReturn = Number(RateOfReturn);
+  let yearlyIncrement = Number(YearlyIncrement);
+      let PeriodInMonth = investmentPeriod*12;
+      // console.log(typeof InvestmentPeriod);
+      rateOfReturn = (rateOfReturn)/1200;
 
       let incrementedAmount=0, TotalSIPWithStepUp=0, CummulationAmount=0 ,MonthlyInvest=0;
       const graph = [
@@ -19,14 +19,12 @@ const serviceData = async ({MonthlyInvestment,InvestmentPeriod,RateOfReturn,Year
       {        
       if(i!==1 && i%12==1)
       {
-      incrementedAmount=Number(MonthlyInvestment*(YearlyIncrement/100));
-      MonthlyInvestment += incrementedAmount;
-      console.log("Incremented Amount ",incrementedAmount);
+      incrementedAmount=(monthlyInvestment*(yearlyIncrement/100));
+      monthlyInvestment += incrementedAmount;
       }
       
-      MonthlyInvest += MonthlyInvestment;
-      // console.log("Monthly Invest:",MonthlyInvest);
-      CummulationAmount =MonthlyInvestment*(Math.pow((1+RateOfReturn),(PeriodInMonth-i+1)));  
+      MonthlyInvest += monthlyInvestment;
+      CummulationAmount =monthlyInvestment*(Math.pow((1+rateOfReturn),(PeriodInMonth-i+1)));  
       TotalSIPWithStepUp += CummulationAmount;       
       if(i%12==0){
         const obj = {
@@ -37,13 +35,11 @@ const serviceData = async ({MonthlyInvestment,InvestmentPeriod,RateOfReturn,Year
         graph.push(obj)
         }      
       }
-      TotalSIPWithStepUp = parseInt(TotalSIPWithStepUp.toFixed(0));
       const graphResult={
         graph:graph,
-        TotalSIPWithStepUp:TotalSIPWithStepUp,
-        MonthlyInvest:MonthlyInvest
+        TotalSIPWithStepUp:TotalSIPWithStepUp.toFixed(0),
+        MonthlyInvest:MonthlyInvest.toFixed(0)
       }
-      // console.log("GraphResult:",graphResult);
       return graphResult;
 }
 
