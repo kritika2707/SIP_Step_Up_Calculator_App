@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Controller = require('../Controller/calculator');
+const controlData = require('../Controller/calculator');
 
-router.get("/getResult",Controller.controlData); 
+router.get("/getResult",controlData);
+
                         
                         
                         

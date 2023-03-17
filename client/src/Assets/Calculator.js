@@ -21,8 +21,11 @@ function Calculator() {
     setYearlyIncrement(val);
   }
   
-  
-  const [result, setResult] = useState();
+  const [TotalSIPWithStepUp, setTotalSIPWithStepUp] = useState();
+  const [graph,setGraph]=useState();
+  const [MonthlyInvest, setMonthlyInvest]= useState();
+
+  // const [result, setResult] = useState();
   // const [status, setStatus] = useState(-1);
   
   useEffect(()=>{
@@ -33,16 +36,18 @@ function Calculator() {
                     InvestmentPeriod: InvestmentPeriod,
                     RateOfReturn: RateOfReturn,
                     YearlyIncrement: YearlyIncrement
-                    } 
-                   
+                    }   
          }
-        ).then((res)=>{
-        setResult(res.data);
-      });
-
-  },[]) 
+        ).then((res) =>{
+          // setResult(res.data)
+          setTotalSIPWithStepUp(res.data.fresult.TotalSIPWithStepUp);
+          setGraph(res.data.fresult.graph);
+          setMonthlyInvest(res.data.fresult.MonthlyInvest)
+        }
+      );
+  },[MonthlyInvestment,InvestmentPeriod,RateOfReturn,YearlyIncrement]) 
      
-  console.log("Result:",result);
+  // console.log("Result:",result);
   // console.log("Status:",status)
      
      
@@ -68,13 +73,8 @@ function Calculator() {
             YearlyIncrement={YearlyIncrement}
             changeYearlyIncrement={changeYearlyIncrement}
           />
-        {/* <Graph data={result}/> */}
-        <Graph 
-        MonthlyInvestment ={  MonthlyInvestment}
-                    InvestmentPeriod= {InvestmentPeriod}
-                    RateOfReturn= {RateOfReturn}
-                    YearlyIncrement={ YearlyIncrement}
-        />
+          
+        <Graph graph={graph} MonthlyInvest={MonthlyInvest} InvestmentPeriod={InvestmentPeriod} TotalSIPWithStepUp={TotalSIPWithStepUp} />
         </div>
       </div>
     </>
