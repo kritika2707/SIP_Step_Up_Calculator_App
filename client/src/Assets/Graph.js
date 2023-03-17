@@ -5,11 +5,9 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'rech
 
 
 function Graph({TotalSIPWithStepUp, InvestmentPeriod, graph, MonthlyInvest}){
-
-  // console.log("shaktiman",graph)
-  // function toIndianRupees(sum){
-    // return sum.toString().replace(/\D/g, "").replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,");
-  // }
+  function toIndianRupees(sum){
+    return sum.toString().replace(/\D/g, "").replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,");
+  }
 
   return (
   <>

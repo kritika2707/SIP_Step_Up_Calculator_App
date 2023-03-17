@@ -3,11 +3,9 @@ const path = require("path");
 const routes = require("./Routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-const bodyparser = require("body-parser");
-app.use(bodyparser.json);
-app.use(bodyparser.urlencoded({ extended: true }));
-
+const bodyParser = require("body-parser");
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use("/", routes);

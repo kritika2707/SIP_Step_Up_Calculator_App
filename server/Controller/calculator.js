@@ -2,7 +2,7 @@ const path = require("path");
 const serviceData = require('../Services/calculator');
 
 const controlData = async (req, res)=>{
-    console.log("testing",res.data);
+  console.log(req.query);
     const result = await serviceData(req.query);
     res.send({
         status:0,
