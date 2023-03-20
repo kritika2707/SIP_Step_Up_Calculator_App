@@ -1,0 +1,190 @@
+* {
+  font-weight: lighter;
+  font-family: sans-serif;
+  transform-style: preserve-3d;
+}
+
+body {
+  margin: 0%;
+}
+
+.parent {
+  height: 100vh;
+  display: block;
+  width: 100%;
+  background-color: #000000;
+  position: relative;
+}
+
+.Dashboard {
+  position: relative;
+  background: #526FE4;
+  width: 15%;
+  height: 100vh;
+  display: inline-block;
+  /* float: left; */
+  box-sizing: border-box;
+}
+
+
+
+.main-screen {
+  display: inline-block;
+  background-color: #f1f5fa;
+  width: 85%;
+  height: inherit;
+  position: absolute;
+ 
+}
+
+.calculator {
+  background-color: #fff;
+  padding: 0px 10px 10px 10px;
+  margin: 20px;
+  position: relative;
+
+}
+
+.slidertype{
+  width: 50%;
+  border: 1px solid #EAEBED;
+  margin: 10px;
+  display: inline-block;
+}
+
+.calculator .calculatorText {
+  padding-left: 18px;
+  color: #595959;
+}
+
+.container {
+  font-size: small;
+  position: relative;
+}
+
+.graphi {
+  position: absolute;
+  width: 45%;
+  height: 87%;
+  display: inline-block;
+  border: 1px solid #EAEBED;
+  margin: 10px;
+  padding: 20px;
+  /* float: left; */
+}
+
+
+h3, h4 {
+  margin: 10px;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+h2 {
+  padding-top: 30px;
+  font-weight: lighter;
+  font-family: sans-serif;
+}
+
+p {
+  font-weight: lighter;
+  font-family: sans-serif;
+}
+
+svg {
+  padding-left: 20px;
+}
+
+.slide {
+  height: auto;
+}
+
+.text-div {
+  display: block;
+}
+
+.text-div h3, .text-div input {
+  display: inline-block;
+  width: auto;
+}
+
+.text-div input {
+  margin: auto;
+  width: 60px;
+}
+
+.desc-text {
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.calc_text {
+  padding-top: 5px;
+}
+
+.graph-div {
+  margin-left: -15px;
+
+}
+
+.demo2 {
+  position: relative;
+}
+
+.sliderInput {
+  background-color: #f1f5fa;
+  border: 1px solid rgb(233, 230, 230);
+  position: absolute;
+  right: 0;
+}
+
+.slider-area {
+  margin: 15px;
+  padding: 7px;
+}
+
+.css-1eoe787-MuiSlider-markLabel {
+  font-size: -0.125rem;
+}
+
+.textforgraph {
+  margin-top: 0%;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.textforgraph span {
+  color: grey;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.textforgraph .AfterYearsOf {
+  color: black;
+  font-weight: bold;
+}
+
+.textforgraph h2 {
+  color: #2c74b3;
+  margin-left: 10px;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.textforgraph p {
+  color: grey;
+  margin-left: 12px;
+  margin-top: -19px;
+  font-size: 20px;
+}
+
+.textforgraph p .currencyRupeeInPara {
+  color: #ff6e31;
+  margin-left: 10px;
+}
+
+.textforgraph p .currencyRupeeInPara2 {
+  color: #03c988;
+  margin-left: 10px;
+  font-weight: bold;
+}
