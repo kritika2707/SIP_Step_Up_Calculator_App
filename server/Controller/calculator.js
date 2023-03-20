@@ -12,6 +12,11 @@ const controlData = async (req, res)=>{
     const RateOfReturn = req.query.RateOfReturn;
     const YearlyIncrement = req.query.YearlyIncrement;
 
+    // console.log(MonthlyInvestment);
+    // console.log(Investmentperiod);
+    // console.log(RateOfReturn);
+    // console.log(YearlyIncrement);
+
     if(MonthlyInvestment < 500 || MonthlyInvestment > 100000 || Investmentperiod < 1 || Investmentperiod >30 || RateOfReturn < 1 || RateOfReturn > 30 || YearlyIncrement < 1 || YearlyIncrement > 12){
         return res.send("Invalid input ");
     }
