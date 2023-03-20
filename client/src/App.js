@@ -1,7 +1,7 @@
 import "./App.css";
 
 import React, { useState } from "react";
-import Parent from "./Assets/Parent";
+import Parent from "./Components/Parent";
 
 function App(){
 
